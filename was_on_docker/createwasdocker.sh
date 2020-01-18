@@ -24,14 +24,13 @@ echo = WAS_DOCKER_CONTAINER_NAME = $WAS_DOCKER_CONTAINER_NAME
 
 read -p "check variables"
 
-#sudo docker build -t $WAS_DOCKER_IMAGE_NAME . -f ./Dockerfile_local \
-#    --build-arg IBMID=$IBMid \
-#    --build-arg IBMID_PWD=$IBMid_password \
-#    --build-arg IMURL=$IBM_Installation_Manager_download_url \
-#    --build-arg IFIXES=recommended
+sudo docker build -t $WAS_DOCKER_IMAGE_NAME . -f ./Dockerfile_local \
+    --build-arg IBMID=$IBMid \
+    --build-arg IBMID_PWD=$IBMid_password \
+    --build-arg IMURL=$IBM_Installation_Manager_download_url \
+    --build-arg IFIXES=recommended
 
-#[ $? -eq 0 ]  || (echo "=== ERROR. Docker build failed .." || exit 1)
-#[ $? -eq 0 ] || exit 1
+[ $? -eq 0 ] || exit 1
 
 
 ## Delete existing docker containier
