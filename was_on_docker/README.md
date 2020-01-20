@@ -10,6 +10,14 @@ NOTE: Verify that password should not have any special characters
 Use the following instructions
  https://github.com/WASdev/ci.docker.websphere-traditional/blob/master/docker-build/download-iim.md
 
-### STEP 3: Build Docker Image
+### STEP 3: Invoke script to Build Docker Image and deploy it
 Run createwasdocker.sh script
 
+## STEP 4: IBM web console login
+Navigate to 
+https://localhost:9043/ibm/console/login.do?action=secure
+
+user: wsadmin
+pwd: get from cat /tmp/PASSWORD
+
+sudo docker exec -t {cont-id} cat /tmp/PASSWORD
